@@ -23,4 +23,9 @@ public class StringCalculatorTest {
     public void add_one_number(){
         assertEquals(1, cal.add("1"));
     }
+
+    @Test
+    public void add_blank_delimiter() {
+        assertEquals(3, cal.add("1 2"));
+    }
 }

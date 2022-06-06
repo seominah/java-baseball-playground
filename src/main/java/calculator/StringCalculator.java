@@ -6,14 +6,12 @@ public class StringCalculator {
             return 0;
         }
 
-        if (str.contains(" ")) {
-            String[] values = str.split(" ");
-            int sum = 0;
-            for (String value : values) {
-                sum += Integer.parseInt(value);
-            }
-            return sum;
+        String[] values = str.split(" ");
+        int sum = 0;
+        for (String value : values) {
+            sum += Integer.parseInt(value);
         }
-        return Integer.parseInt(str);
+        return sum;
+
     }
 }

@@ -6,9 +6,13 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] values = str.split(" ");
-        return sum(values);
+        return sum(split(str));
 
+    }
+
+    private String[] split(String str) {
+        String[] values = str.split(" ");
+        return values;
     }
 
     private int sum(String[] values) {

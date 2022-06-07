@@ -2,12 +2,16 @@ package calculator;
 
 public class StringCalculator {
     public int add(String str) {
-        if (str == null || str.isEmpty()) {
+        if (isBlank(str)) {
             return 0;
         }
 
         return sum(split(str));
 
+    }
+
+    private boolean isBlank(String str) {
+        return str == null || str.isEmpty();
     }
 
     private String[] split(String str) {

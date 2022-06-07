@@ -22,7 +22,11 @@ public class StringCalculator {
     private int[] toInt(String[] values) {
         int[] numbers = new int[values.length];
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = Integer.parseInt(values[i]);
+            int number = Integer.parseInt(values[i]);
+            if (number < 0 ) {
+                throw new RuntimeException();
+            }
+            numbers[i] = number;
         }
         return numbers;
     }

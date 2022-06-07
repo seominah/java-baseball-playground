@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorTest {
     private StringCalculator cal;
@@ -27,5 +28,12 @@ public class StringCalculatorTest {
     @Test
     public void add_blank_delimiter() {
         assertEquals(3, cal.add("1 2"));
+    }
+
+    @Test
+    public void add_negative() {
+        assertThrows(RuntimeException.class, () -> {
+            cal.add("-1 2 3");
+        });
     }
 }

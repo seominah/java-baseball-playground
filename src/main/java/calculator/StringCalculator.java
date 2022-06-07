@@ -22,13 +22,17 @@ public class StringCalculator {
     private int[] toInt(String[] values) {
         int[] numbers = new int[values.length];
         for (int i = 0; i < numbers.length; i++) {
-            int number = Integer.parseInt(values[i]);
-            if (number < 0 ) {
-                throw new RuntimeException();
-            }
-            numbers[i] = number;
+            numbers[i] = toPositive(values[i]);
         }
         return numbers;
+    }
+
+    private int toPositive(String value) {
+        int number = Integer.parseInt(value);
+        if (number < 0 ) {
+            throw new RuntimeException();
+        }
+        return number;
     }
 
     private int sum(int[] numbers) {

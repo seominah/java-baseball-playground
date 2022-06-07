@@ -6,7 +6,7 @@ public class StringCalculator {
             return 0;
         }
 
-        return sum(split(str));
+        return sum(toInt(split(str)));
 
     }
 
@@ -19,10 +19,18 @@ public class StringCalculator {
         return values;
     }
 
-    private int sum(String[] values) {
+    private int[] toInt(String[] values) {
+        int[] numbers = new int[values.length];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = Integer.parseInt(values[i]);
+        }
+        return numbers;
+    }
+
+    private int sum(int[] numbers) {
         int sum = 0;
-        for (String value : values) {
-            sum += Integer.parseInt(value);
+        for (int number : numbers) {
+            sum += number;
         }
         return sum;
     }
